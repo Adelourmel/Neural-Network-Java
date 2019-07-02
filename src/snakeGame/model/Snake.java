@@ -16,10 +16,6 @@ public class Snake {
 
 
 
-  public ArrayList<Square> getBody() {
-    return this.body;
-  }
-
   public boolean move() {
 
     boolean ret = false;
@@ -28,6 +24,7 @@ public class Snake {
     Square tmp = this.body.remove(index);
 
     int newPosX = this.direction.getCoeff()[0] + this.body.get(0).getPosX();
+
     int newPosY = this.direction.getCoeff()[1] + this.body.get(0).getPosY();
 
     if (!isDead(newPosX, newPosY)) {
@@ -53,5 +50,8 @@ public class Snake {
 
   public void setDirection(Direction newDirection) {
     this.direction = newDirection;
+  }
+  public ArrayList<Square> getBody() {
+    return this.body;
   }
 }

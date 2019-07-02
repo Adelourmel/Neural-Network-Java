@@ -10,4 +10,12 @@ public class Grid {
   public Grid() {
     this.snake = new Snake();
   }
+
+  public Snake getSnake() {
+    return this.snake;
+  }
+
+  public ArrayList<Food> getFoods() {
+    return this.foods;
+  }
 }

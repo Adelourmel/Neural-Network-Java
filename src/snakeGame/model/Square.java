@@ -27,6 +27,10 @@ public class Square {
     this.posY = y;
   }
 
+  public Color getColor() {
+    return this.color;
+  }
+
 
   public int getSize() {
     return this.SIZE;
