@@ -20,24 +20,30 @@ public class Snake {
     return this.body;
   }
 
-  public void move() {
+  public boolean move() {
 
+    boolean ret = false;
+
+    int index = this.body.size() - 1;
+    Square tmp = this.body.remove(index);
+
+    int newPosX = this.direction.getCoeff()[0] + this.body.get(0).getPosX();
+    int newPosY = this.direction.getCoeff()[1] + this.body.get(0).getPosY();
+
+    if (!isDead(newPosX, newPosY)) {
+      tmp.setPos(newPosX, newPosY);
+      this.body.add(0, tmp);
+      ret = true;
+    }
+    return ret;
   }
 
 
-  public int growth() {
-
-    int pX = 0;
-    int pY = 0;
-
-
+  public void growth(int pX, int pY) {
     this.body.add(new Square(pX, pY));
-
-
-    return 0;
   }
 
-  public boolean isDead() {
+  public boolean isDead(int newPosX, int newPosY) {
     return true;
   }
 
