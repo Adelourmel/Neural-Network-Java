@@ -1,5 +1,6 @@
 package flappybird.model;
 
+import java.util.ArrayList;
 
 public class Game {
   private Bird bird;
@@ -7,6 +8,6 @@ public class Game {
 
   public Game() {
     this.bird = new Bird();
-    
+
   }
 }
