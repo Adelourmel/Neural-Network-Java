@@ -1,10 +1,12 @@
 package neuralnetwork;
 
-public class Matrix {
+import java.lang.Math;
+
+public class Matrix extends MathF {
 
   private int nbCols;
   private int nbRows;
-  private float[][] data;
+  private double[][] data;
 
   public Matrix(int nbCols, int nbRows) {
 
@@ -18,13 +20,13 @@ public class Matrix {
     }
 
 
-    this.data = new float[this.nbRows][this.nbCols];
+    this.data = new double[this.nbRows][this.nbCols];
   }
 
   public void randomize(int maxVal) {
     for (int i = 0 ; i < this.data.length ; i++) {
       for (int j = 0 ; j < this.data[i].length ; j++) {
-        this.data[i][j] = (float) Math.random() * maxVal;
+        this.data[i][j] = Math.random() * maxVal;
       }
     }
   }
@@ -73,7 +75,18 @@ public class Matrix {
   }
 
 
-  public float[][] getMatrix() {
+  public static Matrix map(Matrix matrix, MathFunction mathFunc) {
+    Matrix ret = new Matrix(matrix.nbCols, matrix.nbRows);
+    for (int i = 0 ; i < matrix.data.length ; i++) {
+      for (int j = 0 ; j < matrix.data[i].length ; j++) {
+        ret.data[i][j] =  mathFunc.f(matrix.data[i][j]);
+      }
+    }
+    return ret;
+  }
+
+
+  public double[][] getMatrix() {
     return this.data;
   }
 }
