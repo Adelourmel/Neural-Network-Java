@@ -60,14 +60,13 @@ public class Matrix extends MathF {
     if (a.nbRows == b.nbCols) {
       ret = new Matrix(b.nbRows, a.nbCols);
 
-      for (int i = 0 ; i < b.data.length ; i++) {
+      for (int i = 0 ; i < b.dataa.length ; i++) {
 
         int sum = 0;
 
         for (int j = 0 ; j < b.data[i].length ; j++) {
           for (int c = 0 ; c < a.data[i].length ; c++) {
             sum += a.data[i][j] * b.data[j][c];
-
           }
           ret.data[i][j] = sum;
         }
@@ -81,7 +80,6 @@ public class Matrix extends MathF {
 
     return ret;
   }
-
 
 
 

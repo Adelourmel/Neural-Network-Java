@@ -33,9 +33,11 @@ public class GUI extends JFrame {
     this.controller = new GameController(this);
     this.game = new GamePanel(this.bird, this.pipes);
 
+    this.addKeyListener(this.controller);
+
     add(this.game);
 
-    Timer time = new Timer(20, this.controller);
+    Timer time = new Timer(30, this.controller);
     time.start();
 
   }

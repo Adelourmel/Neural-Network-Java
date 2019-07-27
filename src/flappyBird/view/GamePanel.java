@@ -34,13 +34,15 @@ public class GamePanel extends JPanel {
     Graphics2D g2d = (Graphics2D) g;
     g2d.setColor(this.bird.getColor());
     g2d.fillOval(this.bird.getPosX(), this.bird.getPosY(), this.bird.getSize(), this.bird.getSize());
+    System.out.println("yop");
+    g2d.dispose();
 
-
+/*
     for (Pipe elem : pipes) {
       g2d.setColor(elem.getColor());
       g2d.fillRect(elem.getPosX(), elem.getPosYBottom(), elem.getWidth(), elem.getHeightScreen() - elem.getPosYBottom());
       g2d.fillRect(elem.getPosX(), 0, elem.getWidth(), elem.getPosYTop());
-    }
+    }*/
 
   }
 }
