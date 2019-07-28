@@ -8,7 +8,7 @@ public class Bird {
 
   private final static int SIZE = 20;
   private final static int FLAPCOEFF = -10;
-  private final static double gravity = 0.1;
+  private final static double gravity = 0.51;
   private final static Color COLOR = Color.BLACK;
 
   private final static int posX = 50;
@@ -24,12 +24,15 @@ public class Bird {
 
 
   public void flap() {
-    System.out.println("yop");
     this.velocity = this.FLAPCOEFF;
+
   }
 
   public void update() {
-    this.velocity += this.gravity;
+    if (this.velocity < 10) {
+      this.velocity += this.gravity;
+    }
+
     this.posY += Math.round(Math.round(this.velocity));
   }
 

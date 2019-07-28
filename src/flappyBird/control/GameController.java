@@ -26,30 +26,28 @@ public class GameController extends KeyAdapter implements ActionListener {
     this.gui.setPipes(this.pipes);
     this.cpt = 0;
 
-    System.out.println("Yop");
-
 
 
   }
 
   public void keyPressed(KeyEvent e) {
-    System.out.println("Salut");
     this.bird.flap();
 
   }
 
   public void actionPerformed(ActionEvent e) {
-    /*if (cpt == 50) {
+    if (cpt == 50) {
       this.pipes.add(new Pipe(this.gui.getWidth(), this.gui.getHeight()));
       this.cpt = 0;
+      System.out.println("yop");
 
     } else {
       this.cpt++;
-    }*/
-    cpt++;
-    System.out.println("cpt = " + cpt);
+    }
+  //  cpt++;
+//    System.out.println("cpt = " + cpt);
     bird.update();
-    /*ArrayList<Pipe> rmElem = new ArrayList<Pipe>();
+    ArrayList<Pipe> rmElem = new ArrayList<Pipe>();
     for (Pipe elem : this.pipes) {
       elem.update();
       if (elem.getPosX() < 0) {
@@ -58,7 +56,7 @@ public class GameController extends KeyAdapter implements ActionListener {
     }
     for (Pipe elem : rmElem) {
       this.pipes.remove(elem);
-    }*/
+    }
     this.gui.getGame().repaint();
   }
 }

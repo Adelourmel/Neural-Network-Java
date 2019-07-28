@@ -23,7 +23,6 @@ public class Pipe {
     int tmp = (heightScreen - this.SPACE);
     this.posYTop =  Math.round(Math.round(Math.random() * tmp));
     this.posYBottom = this.posYTop - this.SPACE;
-    System.out.println(this.posYBottom);
 
 
   }
